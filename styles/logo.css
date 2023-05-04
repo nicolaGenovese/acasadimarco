@@ -1,0 +1,21 @@
+.main-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%; /* specifica una larghezza per l'immagine */
+    margin-top: -20%;
+}
+
+.small-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8rem; /* specifica una larghezza per l'immagine */
+}
+
+@media only screen and (max-width: 992px) {
+    .main-logo{
+        margin-top: -30%;
+        width: 35%;
+    }
+  }
