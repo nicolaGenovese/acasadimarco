@@ -54,12 +54,12 @@ $('.ensaladas-content').slideToggle();
 });
 
 // Hide the content initially
-$('.boccalillos-content').hide();
+$('.boccadillos-content').hide();
   
 // Attach click event handler to the toggle button
-$('.boccalillos-toggle').click(function() {
+$('.boccadillos-toggle').click(function() {
 // Toggle the content display
-$('.boccalillos-content').slideToggle();
+$('.boccadillos-content').slideToggle();
 });
 
 // Hide the content initially
