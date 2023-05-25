@@ -143,10 +143,10 @@ $(document).ready(function()
 			{
 				items:1,
 				loop:true,
-				autoplay:false,
-				dots:false,
+				autoplay:true,
+				dots:true,
 				nav:false,
-				smartSpeed:1200
+				smartSpeed:2000
 			});
 		}
 	}
