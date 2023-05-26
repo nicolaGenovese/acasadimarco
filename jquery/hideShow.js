@@ -1,4 +1,22 @@
 $(document).ready(function() {
+   // Hide the content initially
+   $('.menu-del-dia-content').hide();
+  
+   // Attach click event handler to the toggle button
+   $('.menu-del-dia-toggle').click(function() {
+     // Toggle the content display
+     $('.menu-del-dia-content').slideToggle();
+   });
+
+   // Hide the content initially
+   $('.menu-ejecutivo-content').hide();
+  
+   // Attach click event handler to the toggle button
+   $('.menu-ejecutivo-toggle').click(function() {
+     // Toggle the content display
+     $('.menu-ejecutivo-content').slideToggle();
+   });
+
     // Hide the content initially
     $('.raciones-content').hide();
   
