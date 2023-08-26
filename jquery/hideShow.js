@@ -27,12 +27,12 @@ $(document).ready(function() {
     });
 
     // Hide the content initially
-    $('.raciones-de-marisco-content').hide();
+    $('.pasta-content').hide();
   
     // Attach click event handler to the toggle button
-    $('.raciones-de-marisco-toggle').click(function() {
+    $('.pasta-toggle').click(function() {
     // Toggle the content display
-    $('.raciones-de-marisco-content').slideToggle();
+    $('.pasta-content').slideToggle();
     });
 
     // Hide the content initially
@@ -63,12 +63,12 @@ $(document).ready(function() {
        });
 
 // Hide the content initially
-$('.ensaladas-content').hide();
+$('.risotto-content').hide();
   
 // Attach click event handler to the toggle button
-$('.ensaladas-toggle').click(function() {
+$('.risotto-toggle').click(function() {
 // Toggle the content display
-$('.ensaladas-content').slideToggle();
+$('.risotto-content').slideToggle();
 });
 
 // Hide the content initially
