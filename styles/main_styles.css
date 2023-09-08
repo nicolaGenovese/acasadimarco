@@ -13,7 +13,7 @@
 6. Intro
 7. Video
 8. Signature Dish
-9. The Menu
+9. La Carta
 10. Reservations
 11. Footer
 
@@ -901,7 +901,7 @@ section
 }
 
 /*********************************
-9. The Menu
+9. La Carta
 *********************************/
 
 .themenu
@@ -1191,4 +1191,11 @@ section
 
 .orario {
 	margin-top: 30px;
+}
+
+.martes{
+	color: red;
+	font-size: medium;
+	font-weight: 700;
+	
 }

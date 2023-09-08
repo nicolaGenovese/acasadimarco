@@ -1,20 +1,29 @@
 $(document).ready(function() {
    // Hide the content initially
-   $('.menu-del-dia-content').hide();
+   $('.oferta-especial1-content').hide();
   
    // Attach click event handler to the toggle button
-   $('.menu-del-dia-toggle').click(function() {
+   $('.oferta-especial1-toggle').click(function() {
      // Toggle the content display
-     $('.menu-del-dia-content').slideToggle();
+     $('.oferta-especial1-content').slideToggle();
    });
 
    // Hide the content initially
-   $('.menu-ejecutivo-content').hide();
+   $('.oferta-especial2-content').hide();
   
    // Attach click event handler to the toggle button
-   $('.menu-ejecutivo-toggle').click(function() {
+   $('.oferta-especial2-toggle').click(function() {
      // Toggle the content display
-     $('.menu-ejecutivo-content').slideToggle();
+     $('.oferta-especial2-content').slideToggle();
+   });
+
+   // Hide the content initially
+   $('.oferta-especial3-content').hide();
+  
+   // Attach click event handler to the toggle button
+   $('.oferta-especial3-toggle').click(function() {
+     // Toggle the content display
+     $('.oferta-especial3-content').slideToggle();
    });
 
     // Hide the content initially

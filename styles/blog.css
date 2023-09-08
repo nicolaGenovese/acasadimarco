@@ -878,3 +878,10 @@ section
 .orario {
 	margin-top: 30px;
 }
+
+.martes{
+	color: red;
+	font-size: medium;
+	font-weight: 700;
+	
+}
