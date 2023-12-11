@@ -10,6 +10,7 @@
 4. Init Date Picker
 5. Init Time Picker
 6. Init Test Slider
+7. Loader
 
 
 ******************************/
@@ -27,6 +28,7 @@ $(document).ready(function()
 	var header = $('.header');
 	var hamburgerBar = $('.hamburger_bar');
 	var hamburger = $('.hamburger');
+	var ctrl = new ScrollMagic.Controller();
 
 	setHeader();
 
@@ -49,7 +51,7 @@ $(document).ready(function()
 	initTimePicker();
 	initMenu();
 	initTestSlider();
-
+	initLoaders();
 	/* 
 
 	2. Set Header
@@ -150,5 +152,68 @@ $(document).ready(function()
 			});
 		}
 	}
+	function initLoaders()
+	{
+		if($('.loader').length)
+		{
+			var loaders = $('.loader');
 
+			loaders.each(function()
+			{
+				var loader = this;
+				var endValue = $(loader).data('perc');
+
+				var loaderScene = new ScrollMagic.Scene({
+		    		triggerElement: this,
+		    		triggerHook: 'onEnter',
+		    		reverse:false
+		    	})
+		    	.on('start', function()
+		    	{
+		    		var bar = new ProgressBar.Circle(loader,
+					{
+						color: '#c4ab9f',
+						// This has to be the same size as the maximum width to
+						// prevent clipping
+						strokeWidth: 1,
+						trailWidth: 0,
+						trailColor: 'transparent',
+						easing: 'easeInOut',
+						duration: 1400,
+						text:
+						{
+							autoStyleContainer: false
+						},
+						from:{ color: '#c4ab9f', width: 1 },
+						to: { color: '#c4ab9f', width: 1 },
+						// Set default step function for all animate calls
+						step: function(state, circle)
+						{
+							circle.path.setAttribute('stroke', state.color);
+							circle.path.setAttribute('stroke-width', state.width);
+
+							var value = Math.round(circle.value() * 100);
+							if (value === 0)
+							{
+								circle.setText('0%');
+							}
+							else
+							{
+								circle.setText(value + "%");
+							}
+						}
+					});
+					bar.text.style.fontSize = '20px';
+					bar.text.style.color = "#636363";
+
+
+					bar.animate(endValue);  // Number from 0.0 to 1.0
+		    	})
+			    .addTo(ctrl);
+			});
+		}
+	}
+	
+
+	
 });
