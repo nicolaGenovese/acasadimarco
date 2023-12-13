@@ -90,30 +90,30 @@ $(document).ready(function () {
   });
 
   // Hide the content initially
-  $('.postre-content').hide();
+  $('.postres-content').hide();
 
   // Attach click event handler to the toggle button
-  $('.postre-toggle').click(function () {
+  $('.postres-toggle').click(function () {
     // Toggle the content display
-    $('.postre-content').slideToggle();
+    $('.postres-content').slideToggle();
   });
 
   // Hide the content initially
-  $('.te-cafe-content').hide();
+  $('.té-y-café-content').hide();
 
   // Attach click event handler to the toggle button
-  $('.te-cafe-toggle').click(function () {
+  $('.té-y-café-toggle').click(function () {
     // Toggle the content display
-    $('.te-cafe-content').slideToggle();
+    $('.té-y-café-content').slideToggle();
   });
 
   // Hide the content initially
-  $('.zumos-content').hide();
+  $('.zumos-y-batidos-content').hide();
 
   // Attach click event handler to the toggle button
-  $('.zumos-toggle').click(function () {
+  $('.zumos-y-batidos-toggle').click(function () {
     // Toggle the content display
-    $('.zumos-content').slideToggle();
+    $('.zumos-y-batidos-content').slideToggle();
   });
 
   // Hide the content initially
@@ -171,12 +171,12 @@ $(document).ready(function () {
   });
 
   // Hide the content initially
-  $('.infantil-content').hide();
+  $('.menu-infantil-content').hide();
 
   // Attach click event handler to the toggle button
-  $('.infantil-toggle').click(function () {
+  $('.menu-infantil-toggle').click(function () {
     // Toggle the content display
-    $('.infantil-content').slideToggle();
+    $('.menu-infantil-content').slideToggle();
   });
 
 
