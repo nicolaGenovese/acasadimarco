@@ -191,115 +191,134 @@
                      </div>
                   </div>
                   <!-- Raciones -->
+                  <div class="row themenu_row"></div>
+                  <script>
+                     const menu = [
+    {
+      categoria: "RACIONES",
+      piatti: [
+        { nomePiatto: "ARANCINO CLÁSICO ITALIANO (4 UNIDADES)", prezzo: 6.5 },
+        { nomePiatto: "FRITTATINA NAPOLETANA (CROQUETA DE PASTA, 4 UNIDADES)", prezzo: 6.5 },
+        { nomePiatto: "PAPAS BRAVAS", prezzo: 8.9 },
+        { nomePiatto: "CALAMARES CON SALSA DE ALIOLI", prezzo: 10.5 },
+        { nomePiatto: "NACHOS CON QUESO, GUACAMOLE, CHILI CON CARNE Y JALAPEÑOS", prezzo: 10.5 },
+        { nomePiatto: "INVOLTINI DI MELANZANE RIPIENI IN SALSA CASERA", prezzo: 10.5 }
+      ]
+    },
+    {
+      categoria: "PASTA",
+      piatti: [
+        { nomePiatto: "ESPAGUETIS CON SALSA BOLOÑESA", prezzo: 9.0 },
+        { nomePiatto: "MACARRONES A LA BOSCAIOLA", prezzo: 11.9 },
+        { nomePiatto: "MACARRONES CON PESTO Y CHERRY TOMATE ASADO", prezzo: 9.9 },
+        { nomePiatto: "ESPAGUETIS CON SALSA CARBONARA", prezzo: 12.5 }
+      ]
+    },
+    {
+      categoria: "TOSTADAS",
+      piatti: [
+        { nomePiatto: "AGUACATE CON HUEVO ESCALFADO Y BACON CRUJIENTE", prezzo: 9.0 },
+        { nomePiatto: "CUATRO QUESOS Y BACON", prezzo: 11.9 }
+      ]
+    },
+    {
+      categoria: "PLATOS-DE-MI-CASA",
+      piatti: [
+         { nomePiatto: "HUEVOS ROTOS CON JAMÓN", prezzo: 9.0 },
+         { nomePiatto: "AUTÉNTICA BERENJENA DE PARMESANO", prezzo: 11.5 },
+         { nomePiatto: "CUATRO QUESOS Y BACON", prezzo: 11.9 },
+         { nomePiatto: "LASAÑA TRADICIONAL ITALIANA", prezzo: 11.5 },
+         { nomePiatto: "RÚCULA, TOMATE CHERRY ASADO, PARMESANO Y BALSÁMICO", prezzo: 6.9 },
+         { nomePiatto: "BURRATA CON SALSA ITALIANA", prezzo: 10.9 },
+         { nomePiatto: "CAPONATA (GUISO CLÁSICO DE LA COCINA SICILIANA)", prezzo: 8.5 },
+         { nomePiatto: "SALTIMBOCCA DI POLLO ALLA ROMANA", prezzo: 11.9 },
+         { nomePiatto: "PANCETTA ITALIANA AL FORNO CON GUARNICIÓN", prezzo: 14.9 }
+      ]
+    },
+    {
+       categoria: "HAMBURGUESAS",
+       piatti: [
+         {nomePiatto: "POLLO REBOZADO CON QUESO Y BACON", prezzo: 12.9},
+         {nomePiatto: "DE TERNERA CASERA CON BACON Y QUESO", prezzo: 11.5},
+         {nomePiatto: "BERENJENA Y CALABACÍN A LA PLANCHA, CEBOLLA CALAMERIZADA, PESTO Y MOZZARELLA", prezzo: 10.5},
+         {nomePiatto: "CERDO IBERICO DESMIGADO EN SALSA DEL CHEF", prezzo: 10.5},
+         {nomePiatto: "*AÑADIR POR 1€ CADA INGREDIENTE*", prezzo: 1.0},
+         {nomePiatto: `<div class="dish_contents">
+                                 <ul
+                                    class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                    <li>Bacon</li>
+                                    <li>Queso</li>
+                                    <li>Huevo frito</li>
+                                    <li>Jalapeno</li>
+                                    <li>Cebolla caramelizata</li>
+                                    <li>Guacamole</li>
+                                    <li>Tomate cherry asado</li>
+                                    <li>Aguacate</li>
+                                    <li>Mozzarella</li>
+                                 </ul>
+                              </div>`, prezzo:1}
+    ],
+  },
+  {
+    categoria: "RISOTO",
+    piatti: [
+         {nomePiatto: "CARNE PICADA, CREMA DE CHAMPIÑONES, GUISANTES Y PARMESANO", prezzo: 11.5},
+         {nomePiatto: "GUANCIALE, CREMA DE CALABACÍN Y PARMESANO", prezzo: 11.5},
+         {nomePiatto: "A LA AUTÉNTICA SALSA CARBONARA", prezzo: 11.5},
+    ],
+  },
+  {
+    categoria: "BOCADILLOS",
+    piatti: [
+         {nomePiatto: "CALAMARES A LA ROMANA CON ALIOLI", prezzo: 9.9},
+         {nomePiatto: "PECHUGA DE POLLO REBOZADO CON QUESO, BACON, LECHUGA, TOMATE Y MAYONESA", prezzo: 9.9},
+         {nomePiatto: "JAMÓN, BURRATA, RÚCULA Y PESTO", prezzo: 11.9},
+    ],
+  },
+    // Aggiungi altre categorie e piatti secondo le tue esigenze
+  ];
+                     
+                     function createDishElement(piatto) {
+                         const dishElement = document.createElement('div');
+                         dishElement.classList.add('dish');
+                         
+                         const innerHTML = `
+                             <div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+                                 <div class="dish_title">${piatto.nomePiatto}</div>
+                                 <div class="dish_price">${piatto.prezzo}€</div>
+                             </div>`;
+                         
+                         dishElement.innerHTML = innerHTML;
+                         return dishElement;
+                     }
+                     
+                     function createCategoryColumn(categoria) {
+                         const categoriaColumn = document.createElement('div');
+                         categoriaColumn.classList.add('col-lg-4');
+                         categoriaColumn.classList.add('themenu_column');
 
-                  <div class="col-lg-4 themenu_column">
-                     <div class="themenu_col">
-                        <div class="themenu_col_title raciones-toggle">RACIONES</div>
-                        <div class="dish_list raciones-content">
-                           <!-- Dish -->
-                           <div class="dish">
-                              <div
-                                 class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                 <div class="dish_title">ARANCINO CLÁSICO
-                                    ITALIANO (4 UNIDADES)</div>
-                                 <div class="dish_price">6.5€</div>
-                              </div>
-                              <!-- <div class="dish_contents">
-                                                   <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                      <li>Pork</li>
-                                                      <li>Tenderloin</li>
-                                                      <li>Green Pepper</li>
-                                                   </ul>
-                                                   </div> -->
-                              <!-- <div class="dish_order"><a href="#">Order Now</a></div> -->
-                           </div>
-                           <!-- Dish -->
-                           <div class="dish">
-                              <div
-                                 class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                 <div class="dish_title">FRITTATINA NAPOLETANA
-                                    (CROQUETA DE PASTA, 4 UNIDADES)</div>
-                                 <div class="dish_price">6.5€</div>
-                              </div>
-                              <!-- <div class="dish_contents">
-                                                   <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                      <li>Pork</li>
-                                                      <li>Tenderloin</li>
-                                                      <li>Green Pepper</li>
-                                                   </ul>
-                                                   </div> -->
-                              <!-- <div class="dish_order"><a href="#">Order Now</a></div> -->
-                           </div>
-                           <!-- Dish -->
-                           <div class="dish">
-                              <div
-                                 class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                 <div class="dish_title">PAPAS BRAVAS </div>
-                                 <div class="dish_price">8.9€</div>
-                              </div>
-                              <!-- <div class="dish_contents">
-                                                   <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                      <li>Pork</li>
-                                                      <li>Tenderloin</li>
-                                                      <li>Green Pepper</li>
-                                                   </ul>
-                                                   </div> -->
-                              <!-- <div class="dish_order"><a href="#">Order Now</a></div> -->
-                           </div>
-                           <!-- Dish -->
-                           <div class="dish">
-                              <div
-                                 class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                 <div class="dish_title">CALAMARES CON SALSA DE
-                                    ALIOLI</div>
-                                 <div class="dish_price">10.5€</div>
-                              </div>
-                              <!-- <div class="dish_contents">
-                                                   <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                      <li>Pork</li>
-                                                      <li>Tenderloin</li>
-                                                      <li>Green Pepper</li>
-                                                   </ul>
-                                                   </div> -->
-                              <!-- <div class="dish_order"><a href="#">Order Now</a></div> -->
-                           </div>
-                           <!-- Dish -->
-                           <div class="dish">
-                              <div
-                                 class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                 <div class="dish_title">NACHOS CON QUESO,
-                                    GUACAMOLE, CHILI CON CARNE Y JALAPEÑOS</div>
-                                 <div class="dish_price">10.5€</div>
-                              </div>
-                              <!-- <div class="dish_contents">
-                                                   <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                      <li>Pork</li>
-                                                      <li>Tenderloin</li>
-                                                      <li>Green Pepper</li>
-                                                   </ul>
-                                                   </div> -->
-                              <!-- <div class="dish_order"><a href="#">Order Now</a></div> -->
-                           </div>
-                           <div class="dish">
-                              <div
-                                 class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                 <div class="dish_title">INVOLTINI DI MELANZANE
-                                    RIPIENI IN SALSA CASERA</div>
-                                 <div class="dish_price">10.5€</div>
-                              </div>
-                              <!-- <div class="dish_contents">
-                                                   <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                      <li>Pork</li>
-                                                      <li>Tenderloin</li>
-                                                      <li>Green Pepper</li>
-                                                   </ul>
-                                                   </div> -->
-                              <!-- <div class="dish_order"><a href="#">Order Now</a></div> -->
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  
+                       
+                     
+                         const innerHTML = `
+                             <div class="themenu_col">
+                                 <div class="themenu_col_title ${categoria.categoria.toLowerCase()}-toggle">${categoria.categoria}</div>
+                                 <div class="dish_list ${categoria.categoria.toLowerCase()}-content">
+                                     ${categoria.piatti.map(piatto => createDishElement(piatto).outerHTML).join('')}
+                                 </div>
+                             </div>`;
+                         
+                         categoriaColumn.innerHTML = innerHTML;
+                         return categoriaColumn;
+                     }
+                     
+                     const menuContainer = document.querySelector('.themenu_row');
+                     
+                     menu.forEach(categoria => {
+                         const categoryColumn = createCategoryColumn(categoria);
+                         menuContainer.appendChild(categoryColumn);
+                     });
+                     </script>
+
                </div>
             </div>
          </div>
